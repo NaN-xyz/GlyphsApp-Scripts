@@ -8,7 +8,9 @@ The script takes a comma separated list from input or local txt file and display
 
 Dummy presets are defined in MasterBlaster-presets.txt. You’ll want to edit according to your needs. Each line represents one list and like UI input must be comma separated. 
 
-At the moment it doesn’t handle GlyphsApp glyph names and the Vanilla List of presets remains abridged till I find a fix. Tested in Glyphs 2.4.2 OS X 10.10.5
+At the moment it doesn’t handle GlyphsApp glyph names and the Vanilla List of presets remains abridged till I find a fix. Tested in Glyphs 2.4.2 OS X 10.10.5.
+
+Please make all comments and feature requests via GitHub.
 
 ## License
 
