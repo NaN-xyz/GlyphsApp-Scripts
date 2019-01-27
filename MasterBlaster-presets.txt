@@ -1,0 +1,9 @@
+arrowroot,barley,chervil,dumpling,endive,flaxseed,garbanzo,hijiki,ishtu,jicama,kale,lychee,marjioram,nectarine,oxtail,pizza,quinoa,roquefort,squash,tofu,uppuma,vanilla,wheat,xergis,yogurt,zweiback
+Arrowroot,Barley,Chervil,Dumpling,Endive,Flaxseed,Garbanzo,Hijiki,Ishtu,Jicama,Kale,Lychee,Marjioram,Nectarine,Oxtail,Pizza,Quinoa,Roquefort,Squash,Tofu,Uppuma,Vanilla,Wheat,Xergis,Yogurt,Zweiback
+ARROWROOT,BARLEY,CHERVIL,DUMPLING,ENDIVE,FLAXSEED,GARBANZO,HIJIKI,ISHTU,JICAMA,KALE,LYCHEE,MARJIORAM,NECTARINE,OXTAIL,PIZZA,QUINOA,ROQUEFORT,SQUASH,TOFU,UPPUMA,VANILLA,WHEAT,XERGIS,YOGURT,ZWEIBACK
+antropoģenēzē,atlântico,bucurești,března,együtűköidés,evropě,façade,fîöderalf,große,håndtørklade,litwą,mưaf,nardò,nação,nelabvēlīgām,năm,nước,oficiálním,preċiżament,situaztă,trăm,ñoñería,ảnh
+ANTROPOĢENĒZĒ,ATLÂNTICO,BUCUREȘTI,BŘEZNA,EGYÜTŰKÖIDÉS,EVROPĚ,FAÇADE,FÎÖDERALF,GROẞE,HÅNDTØRKLADE,LITWĄ,MƯAF,NARDÒ,NAÇÃO,NELABVĒLĪGĀM,NĂM,NƯỚC,OFICIÁLNÍM,PREĊIŻAMENT,SITUAZTĂ,TRĂM,ÑOÑERÍA,ẢNH
+00000 00100 00200 00300 00400 00500 00600 00700 00800 00900
+EFHIJLTU,AVWXZ,KMNY,COQS,BPRDG,fijltr,kvwxyz,hmnu,ceogs,abdpq
+aarberg,bellinzona,compéry,dijon,eheringen,frankreich,genève,hamburg,immensee,jerusalem,københavn,landquart,mägebwil,neuchâtel,obstalden,prévoux,quimper,riccione,schweinfurt,territet,unterkulm,villeneuve,wolhusen,xanten,yverdon,zürich
+AARBERG,BELLINZONA,COMPÉRY,DIJON,EHERINGEN,FRANKREICH,GENÈVE,HAMBURG,IMMENSEE,JERUSALEM,KØBENHAVN,LANDQUART,MÄGEBWIL,NEUCHÂTEL,OBSTALDEN,PRÉVOUX,QUIMPER,RICCIONE,SCHWEINFURT,TERRITET,UNTERKULM,VILLENEUVE,WOLHUSEN,XANTEN,YVERDON,ZÜRICH
