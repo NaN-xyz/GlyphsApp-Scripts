@@ -10,7 +10,7 @@ Dummy presets are defined in MasterBlaster-presets.txt. You’ll want to edit ac
 
 At the moment it doesn’t handle GlyphsApp glyph names and the Vanilla List of presets remains abridged till I find a fix. Tested in Glyphs 2.4.2 OS X 10.10.5.
 
-Please make all comments and feature requests via GitHub.
+Please report all bugs, comments and feature requests via GitHub.
 
 ## License
 
