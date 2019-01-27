@@ -1,6 +1,6 @@
 # GlyphsApp Scripts
 
-Or rather, script singular. More to follow.
+Or rather, script singular. Four to mollow. Fore tomorrow. More to follow.
 
 ## MasterBlaster.py
 
