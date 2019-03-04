@@ -4,7 +4,9 @@ Or rather, script singular. Four to mellow. Fore tomorrow. More to follow.
 
 ## Angularizzle.py
 
-Takes lovingly crafted glyphs and disfigures their curves by sharp line. Visually it has something akin to Illustrator's "Simplify" but is more nuanced (imvfho). The 'Keep detail' option attempts to protect the form's integrity. Unselected it's allowed to devolve down to brutish polygon.
+Takes lovingly crafted glyphs and disfigures their curves by sharp line. Visually it has something akin to Illustrator's "Simplify" but is more nuanced (imvfho). The 'Keep detail' option attempts to protect the form's integrity. Unselected it's allowed to devolve down to brutish polygon. 
+
+Can be used on a glyph-by-glyph basis or across the entire selected font.
 
 ## MasterBlaster.py
 
