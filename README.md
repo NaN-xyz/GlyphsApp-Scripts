@@ -2,6 +2,10 @@
 
 Or rather, script singular. Four to mellow. Fore tomorrow. More to follow.
 
+## Angularizzle.py
+
+Takes lovingly crafted glpyhs and disfigures their curves by sharp line. Visually it has something akin to Illustrator's "Simplify" but is more nuanced (imvfho). The 'Keep detail' option attempts to protect the form's integrity. Unselected it's allowed to devolve down to brutish polygon.
+
 ## MasterBlaster.py
 
 The script takes a comma separated list from input or local txt file and displays each entry in all available masters. If the local file fails to load presets can also be set within the script itself.
