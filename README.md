@@ -1,6 +1,6 @@
 # GlyphsApp Scripts
 
-Misc-hief.
+Mischief.
 
 ## Angularizzle.py
 
@@ -20,7 +20,7 @@ Please report all bugs, comments and feature requests via GitHub.
 
 ## CommonGlyphs.py
 
-Prints glyphs common to all open fonts to the macro window by unicode, Glyphs NiceNames and ProductionNames.
+Prints glyphs common to all open fonts to the macro window by unicode, Glyphs NiceNames and ProductionNames. Change SetGlyphColour=True and common glyphs across all open fonts will have a charcoal colour label.
 
 ## License
 
