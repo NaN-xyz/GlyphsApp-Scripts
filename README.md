@@ -18,6 +18,10 @@ At the moment it doesn’t handle GlyphsApp glyph names and the Vanilla List of 
 
 Please report all bugs, comments and feature requests via GitHub.
 
+## CommonGlyphs.py
+
+Prints glyphs common to all open fonts to the macro window by unicode, Glyphs NiceNames and ProductionNames.
+
 ## License
 
 Copyright 2019 [Luke Prowse](http://twitter.com/luke_prowse). Licensed under the Apache License, Version 2.0 (the "License"); you may not use the software provided here except in compliance with the License. You may obtain a copy of the License at
