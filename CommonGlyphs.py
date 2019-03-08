@@ -1,8 +1,11 @@
-#MenuTitle: Common glyphs between n-open fonts
+#MenuTitle: Print Common Glyphs
 # -*- coding: utf-8 -*-
 __doc__="""
 Prints glyphs common to all open fonts to the macro panel.
 """
+
+# Change to True and common glyph label color is set to charcoal
+SetGlyphColour=False	
 
 Glyphs.showMacroWindow()
 Glyphs.clearLog()
@@ -24,7 +27,7 @@ if len(allfonts) > 0:
 	temp = allglyphs[0]
 	for f in range(1,len(allglyphs)): temp = set(temp).intersection(allglyphs[f])
 
-	print "Analyised fonts: " + ", ".join(ofonts)
+	print "Analysed fonts: " + ", ".join(ofonts)
 	print "Number of common glyphs: " + str(len(temp)) + "\n"
 	
 	nice, prod, simp = "", "", ""
@@ -44,6 +47,14 @@ if len(allfonts) > 0:
 	print "\n"
 	print "Production names: \n" + prod
 	print "\n"
+
+	if SetGlyphColour==True:
+		for f in allfonts:
+			for p in temp:
+				f.glyphs[p].color = 11
+			
+
+
 
 else:
 	print "Insufficient number of fonts open to compare."
