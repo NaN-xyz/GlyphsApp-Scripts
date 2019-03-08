@@ -1,6 +1,6 @@
 # GlyphsApp Scripts
 
-Mischief.
+Misc-hief.
 
 ## Angularizzle.py
 
