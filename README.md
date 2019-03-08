@@ -1,6 +1,6 @@
 # GlyphsApp Scripts
 
-Or rather, script singular. Four to mellow. Fore tomorrow. More to follow.
+Misc-hief.
 
 ## Angularizzle.py
 
