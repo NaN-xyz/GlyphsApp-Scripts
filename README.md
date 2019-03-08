@@ -22,9 +22,9 @@ Please report all bugs, comments and feature requests via GitHub.
 
 Prints glyphs common to all open fonts to the macro window by unicode, Glyphs NiceNames and ProductionNames. Edit the variable below and common glyphs across all open fonts will have a charcoal colour label.
 
-'''
+```
 SetGlyphColour=True
-'''
+```
 
 ## License
 
