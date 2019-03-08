@@ -52,9 +52,5 @@ if len(allfonts) > 0:
 		for f in allfonts:
 			for p in temp:
 				f.glyphs[p].color = 11
-			
-
-
-
 else:
 	print "Insufficient number of fonts open to compare."
