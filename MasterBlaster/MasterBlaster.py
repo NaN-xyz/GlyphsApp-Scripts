@@ -1,12 +1,13 @@
 #MenuTitle: MasterBlaster
 # -*- coding: utf-8 -*-
+from __future__ import division, print_function, unicode_literals
+
 __doc__="""
 Display all available masters in a given text list. Define list in UI or local txt file.
 """
 
-import vanilla
-import codecs
-import GlyphsApp
+from Foundation import NSRange
+import vanilla, codecs, GlyphsApp
 
 f = Glyphs.font
 masterlen = len(f.masters)
@@ -53,7 +54,7 @@ class Master( object ):
 
         # Load Settings:
         if not self.LoadP():
-            print "Could not load preferences. Will resort to defaults"
+            print("Could not load preferences. Will resort to defaults")
 
         self.w.open()
         self.w.makeKey()
@@ -141,7 +142,7 @@ class Master( object ):
             s=s+1
 
         if not self.SaveP( self ):
-            print "Could not save preferences." 
+            print("Could not save preferences." )
 
         currentEditViewController.forceRedraw()
 
