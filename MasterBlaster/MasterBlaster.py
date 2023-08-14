@@ -9,9 +9,6 @@ Display all available masters in a given text list. Define list in UI or local t
 from Foundation import NSRange
 import vanilla, codecs, GlyphsApp
 
-f = Glyphs.font
-masterlen = len(f.masters)
-
 class Master(object):
 
     def __init__(self):
@@ -75,75 +72,36 @@ class Master(object):
             return False
         return True
 
-    def Sanitise(self, wordlist):
-
-        santised_list = list()
-
-        for w in wordlist:
-
-            tmp_entry = ""
-
-            for l in w:
-                if f.glyphs[l]:
-                    tmp_entry = tmp_entry + l
-
-            if tmp_entry!="": santised_list.append(tmp_entry)
-
-        return santised_list
-
+    def layersForWords(self, word, masterId):
+        layers = []
+        for c in word:
+            g = self.font.glyphForCharacter_(ord(c))
+            if g:
+                l = g.layers[masterId]
+                if l:
+                    layers.append(l)
+        return layers
+    
     def Blaster(self, wordlist):
-
         layout = self.w.radioGroup.get() # 0=stacked 1=sidebyside
-        wordlist = self.Sanitise(wordlist)
-
-        repeater = ""
-        wlist = ""
-
+        layer_list = []
         for w in wordlist:
-            s = 0
-            while s < masterlen:
+            for m in self.font.masters:
+                masterID = m.id
+                layers = self.layersForWords(w, masterID)
+                if len(layers) == 0:
+                    break
+                layer_list.extend(layers)
                 if layout == 1:
-                    repeater = repeater + w + " "
+                    layer_list.extend(self.layersForWords(" ", masterID))
                 else:
-                    repeater = repeater + w + "\n"
-                s = s + 1
+                    layer_list.append(GSControlLayer.newline())
+            layer_list.append(GSControlLayer.newline())
 
-            wlist = wlist + repeater + "\n"
-            repeater = ""
-
-        Glyphs.currentDocument.windowController().addTabWithString_(wlist) # add text
-        currentEditViewController = Glyphs.currentDocument.windowController().activeEditViewController()
-        currentTab = currentEditViewController.graphicView()
-
-        s = 0
-        location_start = 0
-        listlen = len(wordlist)
-
-        while s < listlen:
-
-            myRangeOfGlyphs = NSRange()
-            t = 0
-
-            while t < masterlen:
-
-                myRangeOfGlyphs.location = location_start
-                myRangeOfGlyphs.length = len(wordlist[s])
-
-                # assign master value to range
-                masterID = f.masters[t].id
-                Attributes = {"GSLayerIdAttrib": masterID}
-                currentTab.textStorage().text().addAttributes_range_(Attributes, myRangeOfGlyphs)
-
-                location_start = location_start + len(wordlist[s]) + 1
-                t += 1
-
-            location_start += 1
-            s = s + 1
+        self.font.newTab(layer_list)
 
         if not self.SaveP(self):
             print("Could not save preferences.")
-
-        currentEditViewController.forceRedraw()
 
     def GoDblC(self, sender):
 
@@ -152,7 +110,7 @@ class Master(object):
         self.Blaster(preselect.split(","))
 
     def GoButton(self, sender):
-
+        self.font = Glyphs.font
         customT = self.w.inputCustom.get()
         preset_selections = self.w.presets.getSelection()
 
