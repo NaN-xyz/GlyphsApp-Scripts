@@ -13,6 +13,8 @@ masterlen = len(f.masters)
 
 # Script name by Type Overlord Florian Horatio Runge of Flensborre @FlorianRunge
 
+Glyphs.registerDefault("com.LNP.Angela.inputSize", 80)
+
 class Angela(object):
 
     def __init__(self):
@@ -61,7 +63,7 @@ class Angela(object):
     def SaveP(self, sender):
         try:
             Glyphs.defaults["com.LNP.Angela.inputSize"] = self.w.inputSize.get()
-            Glyphs.defaults["com.LNP.Angela.checkBox"] = self.w.checkbox.get()
+            Glyphs.intDefaults["com.LNP.Angela.checkBox"] = self.w.checkBox.get()
         except:
             return False
         return True
@@ -69,7 +71,7 @@ class Angela(object):
     def LoadP(self):
         try:
             self.w.inputSize.set(Glyphs.defaults["com.LNP.Angela.inputSize"])
-            self.w.checkbox.set(Glyphs.defaults["com.LNP.Angela.checkbox"])
+            self.w.checkBox.set(Glyphs.intDefaults["com.LNP.Angela.checkbox"])
         except:
             import traceback
             print(traceback.format_exc())
