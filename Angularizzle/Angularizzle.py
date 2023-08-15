@@ -80,49 +80,41 @@ class Angela(object):
 
     def MainAngela(self, asize, detail):
 
-        if asize.isdigit() == True:
+        if not asize.isdigit():
+            Message("!!Please input a digit")
+            return
 
-            global stepnum, tStepSize
-            asize = int(asize)
-            stepnum = 130
-            tStepSize = 1.0 / stepnum # !impt
-            font = Glyphs.font
-            angsize = int(asize)
-            font.disableUpdateInterface()
+        self.font = Glyphs.font
 
-            for glyph in selectedGlyphs:
+        asize = int(asize)
+        stepnum = 130
+        self.tStepSize = 1.0 / stepnum # !impt
 
-                thisgl = font.glyphs[glyph.name].layers[0]
-                if thisgl.paths == 0:
-                    continue
-                thisgl.color = 8 #purple
+        self.font.disableUpdateInterface()
 
-                if len(selectedGlyphs) > 1:
-                    ang = self.ReturnNodesAlongPath(thisgl.paths, angsize)
-                else:
-                    ang = self.ReturnNodesAlongPath(GlyphStartPaths, angsize)
+        for layer in self.font.selectedLayers:
 
-                if detail == False:
-                    ang = self.StripDetail(ang, asize)
+            layer.color = 8 #purple
 
-                if ang:
-                    #thisgl = font.selectedLayers[0]
-                    self.ClearScreen(thisgl)
+            ang = self.ReturnNodesAlongPath(layer.paths, asize)
 
-                    for n in ang:
-                        pts = n[2]
-                        isclosed = n[1]
-                        outline = self.ListToPath(pts, isclosed)
-                        thisgl.paths.append(outline)
+            if detail == False:
+                ang = self.StripDetail(ang, asize)
 
-            font.enableUpdateInterface()
+            if ang:
+                new_paths = []
+                for n in ang:
+                    pts = n[2]
+                    isclosed = n[1]
+                    outline = self.ListToPath(pts, isclosed)
+                    new_paths.append(outline)
+                layer.shapes = new_paths
 
-            if not self.SaveP(self):
-                pass
-                #print "Could not save preferences."
+        self.font.enableUpdateInterface()
 
-            if len(selectedGlyphs) > 1:
-                self.w.close()
+        if not self.SaveP(self):
+            pass
+            #print "Could not save preferences."
 
     def StripDetail(self, nlist, asize):
 
@@ -192,7 +184,7 @@ class Angela(object):
         return calc
 
     # Put all the xy coords of linear t GetPoint() increments in list
-    def CreatePointList(self, p0, p1, p2, p3):
+    def CreatePointList(self, p0, p1, p2, p3, tStepSize):
         pl = list()
         tmp = 0
         while tmp < 1:
@@ -286,11 +278,11 @@ class Angela(object):
         return tmplist
 
     # returns nodes along a curve at intervals of space between
-    def ReturnNodesAlongPath(self, GlyphStartPaths, spacebetween):
+    def ReturnNodesAlongPath(self, glyphStartPaths, spacebetween):
 
         allPaths = list()
 
-        for path in GlyphStartPaths:
+        for path in glyphStartPaths:
 
             pathTotalLength = 0
             allpointslist = []
@@ -326,7 +318,7 @@ class Angela(object):
                     tp2 = (segment[2].x, segment[2].y)
                     tp3 = (segment[3].x, segment[3].y)
 
-                    pointlist = self.CreatePointList(tp0, tp1, tp2, tp3)
+                    pointlist = self.CreatePointList(tp0, tp1, tp2, tp3, tStepSize)
                     lookup = self.CreateDistList(pointlist)
                     totallength = lookup[-1]
                     pathTotalLength += totallength
