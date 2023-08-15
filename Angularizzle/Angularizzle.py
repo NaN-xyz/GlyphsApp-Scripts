@@ -8,9 +8,6 @@ import vanilla
 import copy
 import GlyphsApp
 
-f = Glyphs.font
-masterlen = len(f.masters)
-
 # Script name by Type Overlord Florian Horatio Runge of Flensborre @FlorianRunge
 
 Glyphs.registerDefault("com.LNP.Angela.inputSize", 80)
@@ -43,21 +40,9 @@ class Angela(object):
         self.w.open()
         self.w.makeKey()
 
-        global font
-        font = Glyphs.font
-        global selectedGlyphs
-        selectedGlyphs = [l.parent for l in font.selectedLayers]
-
-        # if single glyph save state
-        if len(selectedGlyphs) == 1:
-            thisgl = font.selectedLayers[0]
-            global GlyphStartPaths
-            GlyphStartPaths = copy.deepcopy(thisgl.paths)
-
     def CloseApp(self, sender):
-        thisgl = font.selectedLayers[0]
-        self.ClearScreen(thisgl)
-        for p in GlyphStartPaths: thisgl.paths.append(p)
+        #thisgl = font.selectedLayers[0]
+        #thisgl.paths = GlyphStartPaths
         self.w.close()
 
     def SaveP(self, sender):
@@ -196,8 +181,9 @@ class Angela(object):
 
     #Clear layer except components
     def ClearScreen(self, clearlayer):
-        for i in range(len(clearlayer.paths))[::-1]:
-            del clearlayer.paths[i]
+        clearlayer.paths = []
+        #for i in range(len(clearlayer.paths))[::-1]:
+        #    del clearlayer.paths[i]
 
     def lerp(self, v, d):
         return v[0] * (1 - d) + v[1] * d
